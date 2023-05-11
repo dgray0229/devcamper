@@ -1,0 +1,3 @@
+# javascript folders and config files to ignore
+node_modules/
+config/config.env
