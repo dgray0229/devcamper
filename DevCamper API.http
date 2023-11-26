@@ -4,7 +4,7 @@
 # group: Bootcamps
 # @name Get All Bootcamps
 # Fetch all Bootcamps from database, includes pagination, filtering, etc.
-GET {{URL}}{{BOOTCAMPS}}
+GET {{URL}}{{BOOTCAMPS}}?page=1&limit=2
 
 ###
 # group: Bootcamps
@@ -82,7 +82,7 @@ Content-Disposition: form-data; name="file"; filename="pexels-jopwell-2422293.jp
 # group: Courses
 # @name Get All Courses
 # Fetch all Bootcamps from database, includes pagination, filtering, etc.
-GET {{URL}}{{COURSES}}
+GET {{URL}}{{COURSES}}?select=title,description
 
 ###
 # group: Courses
