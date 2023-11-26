@@ -10,7 +10,7 @@ GET {{URL}}{{BOOTCAMPS}}
 # group: Bootcamps
 # @name Get Single Bootcamp
 # Grab a single Bootcamp by its ID.
-GET {{URL}}{{BOOTCAMPS}}/5d725a1b7b292f5f8ceff788
+GET {{URL}}{{BOOTCAMPS}}/5d713995b721c3bb38c1f5d0
 
 ###
 # group: Bootcamps
@@ -44,19 +44,39 @@ Content-Type: application/json
 # group: Bootcamps
 # @name Update Bootcamp
 # Update single bootcamp in database. 
-PUT {{URL}}{{BOOTCAMPS}}/1
+PUT {{URL}}{{BOOTCAMPS}}/5d713995b721c3bb38c1f5d0
+Content-Type: application/json
+
+{
+  "housing": true,
+  "jobGuarantee": false
+}
 
 ###
 # group: Bootcamps
 # @name Delete Bootcamp
 # Delete bootcamp from database.
-DELETE {{URL}}{{BOOTCAMPS}}/1
+DELETE {{URL}}{{BOOTCAMPS}}/5d713995b721c3bb38c1f5d0
 
 ###
 # group: Bootcamps
 # @name Get Bootcamps By Radius
 # Get all bootcmaps within a certain radius. 
 GET {{URL}}{{BOOTCAMPS}}/radius/02118/100
+
+###
+# group: Bootcamps
+# @name Update Bootcamp Photo
+# Upload bootcamp photo to database.
+PUT {{URL}}{{BOOTCAMPS}}/5d713995b721c3bb38c1f5d0/photo
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="pexels-jopwell-2422293.jpg"; mimetype="image/jpeg"
+
+< ./assets/pexels-jopwell-2422293.jpg
+--WebAppBoundary--
+
 
 ###
 # group: Courses
@@ -69,3 +89,43 @@ GET {{URL}}{{COURSES}}
 # @name Get Courses for Bootcamp
 # Fetch all Bootcamps from database, includes pagination, filtering, etc.
 GET {{URL}}{{BOOTCAMPS}}5d725a1b7b292f5f8ceff788/courses
+
+###
+# group: Courses
+# @name Get Single Course
+# Fetch a single course.
+GET {{URL}}{{COURSES}}5d725cfec4ded7bcb480eaa6
+
+###
+# group: Courses
+# @name Create New Course
+# Create a course for a specific bootcamp.
+POST {{URL}}{{BOOTCAMPS}}/5d725a1b7b292f5f8ceff788/courses
+Content-Type: application/json
+
+{
+  "title": "React Native Development",
+  "description": "This course will provide you with all of the essentials to become a successful mobile developer with React Native. You will learn to master React Native, and learn the essentials of Kotlin and Swift",
+  "weeks": 8,
+  "tuition": 8000,
+  "minimumSkill": "beginner",
+  "scholarhipsAvailable": true
+}
+
+###
+# group: Courses
+# @name Update Course
+# Create a course for a specific bootcamp.
+PUT {{URL}}{{COURSES}}/5d725cfec4ded7bcb480eaa6
+Content-Type: application/json
+
+{
+  "tuition": 8000,
+  "minimumSkill": "advanced"
+}
+
+###
+# group: Courses
+# @name Delete Course
+# Delete course from database.
+DELETE {{URL}}{{COURSES}}/5d725cfec4ded7bcb480eaa6

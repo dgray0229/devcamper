@@ -6,6 +6,9 @@
   "scripts": {
     "start": "NODE_ENV=production node server",
     "dev": "NODE_ENV=development nodemon server",
+    "seeder:destroy": "node seeder -d",
+    "seeder:import": "node seeder -i",
+    "seeder:reset": "node seeder -d && node seeder -i",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Devin Gray",
@@ -14,6 +17,8 @@
     "colors": "^1.4.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-fileupload": "^1.4.3",
+    "mime": "^3.0.0",
     "mongoose": "^7.1.1",
     "morgan": "^1.10.0",
     "node-geocoder": "^4.2.0",
