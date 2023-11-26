@@ -1,0 +1,71 @@
+# DevCamper API
+
+###
+# group: Bootcamps
+# @name Get All Bootcamps
+# Fetch all Bootcamps from database, includes pagination, filtering, etc.
+GET {{URL}}{{BOOTCAMPS}}
+
+###
+# group: Bootcamps
+# @name Get Single Bootcamp
+# Grab a single Bootcamp by its ID.
+GET {{URL}}{{BOOTCAMPS}}/5d725a1b7b292f5f8ceff788
+
+###
+# group: Bootcamps
+# @name Create New Bootcamp
+# Add new bootcamp to database. Must be authenticated and must be publisher or admin.
+POST {{URL}}{{BOOTCAMPS}}
+Content-Type: application/json
+
+{
+  "_id": "5d725a1b7b292f5f8ceff788",
+  "user": "5c8a1d5b0190b214360dc032",
+  "name": "Devcentral Bootcamp",
+  "description": "Is coding your passion? Codemasters will give you the skills and the tools to become the best developer possible. We specialize in front end and full stack web development",
+  "website": "https://devcentral.com",
+  "phone": "(444) 444-4444",
+  "email": "enroll@devcentral.com",
+  "address": "45 Upper College Rd Kingston RI 02881",
+  "careers": [
+    "Mobile Development",
+    "Web Development",
+    "Data Science",
+    "Business"
+  ],
+  "housing": false,
+  "jobAssistance": true,
+  "jobGuarantee": true,
+  "acceptGi": true
+}
+
+###
+# group: Bootcamps
+# @name Update Bootcamp
+# Update single bootcamp in database. 
+PUT {{URL}}{{BOOTCAMPS}}/1
+
+###
+# group: Bootcamps
+# @name Delete Bootcamp
+# Delete bootcamp from database.
+DELETE {{URL}}{{BOOTCAMPS}}/1
+
+###
+# group: Bootcamps
+# @name Get Bootcamps By Radius
+# Get all bootcmaps within a certain radius. 
+GET {{URL}}{{BOOTCAMPS}}/radius/02118/100
+
+###
+# group: Courses
+# @name Get All Courses
+# Fetch all Bootcamps from database, includes pagination, filtering, etc.
+GET {{URL}}{{COURSES}}
+
+###
+# group: Courses
+# @name Get Courses for Bootcamp
+# Fetch all Bootcamps from database, includes pagination, filtering, etc.
+GET {{URL}}{{BOOTCAMPS}}5d725a1b7b292f5f8ceff788/courses

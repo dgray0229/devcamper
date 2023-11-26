@@ -14,7 +14,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
 
         // Fields to exclude
         const removeFields = ["select", "sort", "page", "limit"];
-        Ï;
+        ;
 
         // Loop over removeFields and delete them from reqQuery
         removeFields.forEach((field) => delete reqQuery[field]);
@@ -73,7 +73,7 @@ exports.getBootcamps = asyncHandler(async (req, res, next) => {
             msg: "Show all bootcamps",
         });
     } catch (error) {
-        res.status(400).json({success: false, msg: err.message});
+        res.status(400).json({success: false, msg: error.message});
     }
 });
 
@@ -107,8 +107,8 @@ exports.createBootcamp = asyncHandler(async (req, res, next) => {
         res
             .status(201)
             .json({success: true, data: bootcamp, msg: "Create new bootcamp"});
-    } catch (err) {
-        res.status(400).json({success: false, msg: err.message});
+    } catch (error) {
+        res.status(400).json({success: false, msg: error.message});
     }
 });
 

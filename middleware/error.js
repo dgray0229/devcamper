@@ -1,3 +1,4 @@
+const ErrorResponse = require("../utils/errorResponse");
 const errorHandler = (err, req, res, next) => {
     console.log(err.stack.red);
     if (err.name === 'CastError') {
@@ -12,7 +13,7 @@ const errorHandler = (err, req, res, next) => {
         const message = Object.values(err.errors).map(val => val.message);
         err = new ErrorResponse(message, 400);
     }
-    
+
     res.status(err.statusCode || 500).json({
         success: false,
         error: err.message || "Server Error",

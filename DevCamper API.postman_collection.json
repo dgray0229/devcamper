@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "ec155152-ea99-4638-a19b-8e28382f7ec8",
+		"name": "DevCamper API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2693901"
+	},
+	"item": [
+		{
+			"name": "Bootcamps",
+			"item": [
+				{
+					"name": "Get All Bootcamps",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}"
+							]
+						},
+						"description": "Fetch all Bootcamps from database, includes pagination, filtering, etc."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Bootcamp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}/1",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Grab a single Bootcamp by its ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Bootcamp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "JSON Type",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"5d725a1b7b292f5f8ceff788\",\n    \"user\": \"5c8a1d5b0190b214360dc032\",\n    \"name\": \"Devcentral Bootcamp\",\n    \"description\": \"Is coding your passion? Codemasters will give you the skills and the tools to become the best developer possible. We specialize in front end and full stack web development\",\n    \"website\": \"https://devcentral.com\",\n    \"phone\": \"(444) 444-4444\",\n    \"email\": \"enroll@devcentral.com\",\n    \"address\": \"45 Upper College Rd Kingston RI 02881\",\n    \"careers\": [\n        \"Mobile Development\",\n        \"Web Development\",\n        \"Data Science\",\n        \"Business\"\n    ],\n    \"housing\": false,\n    \"jobAssistance\": true,\n    \"jobGuarantee\": true,\n    \"acceptGi\": true\n}"
+						},
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}"
+							]
+						},
+						"description": "Add new bootcamp to database. Must be authenticated and must be publisher or admin."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Bootcamp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}/1",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Update single bootcamp in database. "
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Bootcamp",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}/1",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Delete bootcamp from database."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bootcamps By Radius",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}/radius/02118/100",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}"
+							],
+							"path": [
+								"radius",
+								"02118",
+								"100"
+							]
+						},
+						"description": "Get all bootcmaps within a certain radius. "
+					},
+					"response": []
+				}
+			],
+			"description": "Bootcamps CRUD functionality"
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Get All Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{COURSES}}",
+							"host": [
+								"{{URL}}{{COURSES}}"
+							]
+						},
+						"description": "Fetch all Bootcamps from database, includes pagination, filtering, etc."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Courses for Bootcamp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{BOOTCAMPS}}5d725a1b7b292f5f8ceff788/courses",
+							"host": [
+								"{{URL}}{{BOOTCAMPS}}5d725a1b7b292f5f8ceff788"
+							],
+							"path": [
+								"courses"
+							]
+						},
+						"description": "Fetch all Bootcamps from database, includes pagination, filtering, etc."
+					},
+					"response": []
+				}
+			],
+			"description": "Courses CRUD functionality"
+		}
+	]
+}
